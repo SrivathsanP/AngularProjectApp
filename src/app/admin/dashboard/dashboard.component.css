@@ -1,0 +1,67 @@
+.Wrap {
+    padding: 130px;
+}
+
+
+.header {
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+mat-card {
+    padding: 40px;
+}
+
+/* mat-chip      */
+mat-chip.Login {
+    background-color: greenyellow;
+}
+
+mat-chip.Logout {
+    background-color: brown;
+}
+
+table,
+thead,
+tbody {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+table thead tr,
+table tbody tr {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+table thead tr th,
+table tbody tr td {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+tbody {
+    margin-top: 30px;
+}
+
+tbody tr {
+    padding: 10px;
+}
+
+tbody tr:not(:last-child) {
+    border-bottom: .5px solid gainsboro;
+}
+
+.editBtn {
+    margin-right: 10px;
+}
+
+.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+  }

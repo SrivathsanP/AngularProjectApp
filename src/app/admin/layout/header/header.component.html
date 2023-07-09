@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<mat-toolbar color="primary" [ngClass]="isDarkMode ? 'dark-mode' : ''">
+    <div class="Wrap">
+        <span>My App</span>
+    </div>
+    <div class="Wrap">
+        <button matTooltip="Logout" (click)="logout()" mat-icon-button class="example-icon favorite-icon"
+            aria-label="Example icon-button with heart icon">
+            <i class="fa fa-sign-out"></i>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Toggle Dark Mode" (click)="toggleMode()">
+            <mat-icon>{{ isDarkMode ? 'brightness_5' : 'brightness_4' }}</mat-icon>
+          </button>
+          
+    </div>
+</mat-toolbar>

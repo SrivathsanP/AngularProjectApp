@@ -1,0 +1,40 @@
+<div class="Wrap" [ngClass]="isDarkMode ? 'dark-mode' : ''">
+    
+    <form class="authForm" [formGroup]="editForm" (ngSubmit)="formSubmitHandler()">
+        <div class="formElement">
+            
+            <mat-form-field>
+                <input formControlName="user_name" type="text" matInput placeholder="user name" />
+            </mat-form-field>
+        </div>
+
+        <div class="formElement">
+            <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input formControlName="date" matInput [matDatepicker]="picker" />
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+
+        <div class="formElement">
+            <mat-form-field>
+                <mat-select formControlName="type" placeholder="Select Type">
+                    <mat-option *ngFor="let item of ['Login','Logout']" [value]="item">
+                        {{item}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+        <div class="formBtn">
+            <button (click)="dialogRef.close(false)" mat-raised-button type="button" color="primary">
+                Cancel
+            </button>
+            <button mat-raised-button type="submit" color="accent" [disabled]="editForm.invalid || isLoading">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>

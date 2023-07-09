@@ -1,0 +1,40 @@
+<div class="authContent">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="mainContent">
+                <form [formGroup]="loginForm" (ngSubmit)="formSubmitHandler()" class="authForm">
+                    <div class="formElement">
+
+                        <mat-form-field>
+                            <input formControlName="user_name" type="text" matInput placeholder="user name" />
+                        </mat-form-field>
+                    </div>
+
+                    <div class="formElement">
+
+                        <mat-form-field>
+                            <input formControlName="password" type="{{passwordType}}" matInput placeholder="password" />
+                            <mat-icon (click)="setPasswordType()" matSuffix>{{passwordType=='password'?
+                                'visibility':'visibility_off' }}</mat-icon>
+
+                        </mat-form-field>
+                    </div>
+                    <div class="forgetLink">
+
+                        <p routerLink="/auth/forget-password">Forget password ?</p>
+                    </div>
+                    <div class="formBtn">
+                        <button routerLink="/auth/register" mat-raised-button type="button"
+                            color="primary">Register</button>
+                        <button [disabled]="loginForm.invalid || isLoading" mat-raised-button type="submit"
+                            color="accent">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

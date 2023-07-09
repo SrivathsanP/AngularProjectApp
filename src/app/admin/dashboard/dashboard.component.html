@@ -1,0 +1,43 @@
+<div class="Wrap" >
+    <div>
+        <mat-card [ngClass]="isDarkMode ? 'dark-mode' : ''">
+            <mat-card-content>
+                <div class="header">Login Activities 
+                    <button mat-icon-button class="example-icon" aria-label="Toggle Dark Mode" (click)="toggleMode()">
+                        <mat-icon>{{ isDarkMode ? 'brightness_5' : 'brightness_4' }}</mat-icon>
+                      </button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.no</th>
+                            <th>User Name</th>
+                            <th>Date/Time</th>
+                            <th>Type</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="data.length==0">
+                            <td colspan="5">No Records Found..</td>
+                        </tr>
+                        <tr *ngFor="let item of data; let i=index">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.date | date: 'dd-MM-yyyy h:mm a' }}</td>
+                            <td>
+                                <mat-chip class="{{ item.type }}">{{ item.type }}</mat-chip>
+                            </td>
+                            <td>
+                                <button class="editBtn" (click)="edit(item)" mat-raised-button
+                                    color="primary">Edit</button>
+                                <button (click)="deleteData(item.id)" mat-raised-button color="accent">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
